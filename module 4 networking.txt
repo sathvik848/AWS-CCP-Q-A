@@ -1,0 +1,35 @@
+Module 4: Networking
+Connectivity to AWS
+1. Amazon Virtual Private Network (VPC): enables you to provision an isolated section of the AWS Cloud within a VPC, you can organize your resources into subnets. A subnet is a section of a VPC that can contain resources such as Amazon EC2 instances.
+
+2. Internet Gateway: is a connection between a VPC and the internet.
+
+3. Virtual Private Gateway: to access private resources in a VPC, you can use a virtual private gateway. Enables you to establish a virtual private network (VPN) connection between your VPC and a private network.
+
+4. AWS Direct Connection: enables you to establish a dedicated private connection between your data centre and a VPC. This connection helps you to reduce network costs and increase the amount of bandwidth.
+
+Subnets and Network Access Control Lists
+Network Traffic in a VPC: the VPC component that checks packet permissions for subnets is a network access control list (ACL).
+
+Network Access Control Lists (ACLs): virtual firewall that controls inbound and outbound traffic at the subnet level.
+— Each AWS account includes a default network ACL.
+— By default, your account’s default network ACL allows all inbound and outbound traffic.
+— All ACL’s have an explicit deny rule. This rule ensures that if a packet does not match any of the other rules in the list, the packet is denied.
+
+Stateless Packet Filtering: Network ACL’s perform stateless packet filtering. They remember nothing and check packets that cross the subnet border each way (inbound and outbound).
+
+— The VPC component that checks packet permissions for an Amazon EC2 instance is a security group.
+
+Security Groups: Is a virtual firewall that controls inbound and outbound traffic for an Amazon EC2 instance. By default, a security group denies all inbound traffic and allows all outbound traffic. You can add custom rules to configure which traffic to allow or deny.
+
+— If you have multiple Amazon EC2 instances within a subnet, you can associate the same security group or use different security groups for each instance.
+
+Stateful Packet Filtering: security groups perform stateful packet filtering. They remember previous decisions made for incoming packets.
+
+Global Networking
+Domain Name Systems (DNS): DNS resolution is the process of translating a domain name to an IP address.
+
+Amazon Route 53: is a DNS web service, connects users requests to infrastructure running in AWS. It can route users to infrastructure outside of AWS.
+
+— You can register new domain names directly in Route53
+
